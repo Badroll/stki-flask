@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Pencarian</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Hasil Pencarian</h1>
+
+    <p>Anda mencari: {{ search_query }}</p>
+
+    <!-- Tampilkan hasil pencarian di sini -->
+    {% if search_results %}
+        <ul>
+            {% for result in search_results %}
+                <li>{{ result }}<br><br></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Tidak ada hasil yang ditemukan.</p>
+    {% endif %}
+
+</body>
+</html>
