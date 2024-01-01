@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasil Pencarian</title>
+    <title>Hasil</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,19 +13,16 @@
 </head>
 <body>
 
-    <h1>Hasil Pencarian</h1>
+    <h1>Hasil pencarian untuk: <i>{{ search_query }}</i></h1>
 
-    <p>Anda mencari: {{ search_query }}</p>
-
-    <!-- Tampilkan hasil pencarian di sini -->
     {% if search_results %}
-        <ul>
+        <ol>
             {% for result in search_results %}
                 <li>{{ result }}<br><br></li>
             {% endfor %}
-        </ul>
+        </ol>
     {% else %}
-        <p>Tidak ada hasil yang ditemukan.</p>
+        <p>Maaf, tidak ada jurnal yang relevan</p>
     {% endif %}
 
 </body>
